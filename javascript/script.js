@@ -11,25 +11,39 @@ $('.dropdown-trigger').dropdown({
 
 $(document).ready(function hideWk() {
     $(".workouts").hide();
-    $("#tableHeaders").hide();
 })
+var hideTitles =  function hideTitles() {
+    $('#wkOnetitle').hide();
+    $('#wkTwotitle').hide();
+    $('#wkThreetitle').hide();
+    }
+hideTitles();
 
 var wkOne = $('#dayOne').click( function () {
     $('#secondDaywk').hide();
     $('#thirdDaywk').hide();
     $('#firstDaywk').show();
+    $('#wkOnetitle').show();
+    $('#wkTwotitle').hide();
+    $('#wkThreetitle').hide();
 }) 
 
 var wkTwo = $('#dayTwo').click( function () {
     $('#firstDaywk').hide();
     $('#thirdDaywk').hide();
     $('#secondDaywk').show();
+    $('#wkTwotitle').show();
+    $('#wkOnetitle').hide();
+    $('#wkThreetitle').hide();
 }) 
 
 var wkThree = $('#dayThree').click( function () {
     $('#firstDaywk').hide();
     $('#secondDaywk').hide()
     $('#thirdDaywk').show();
+    $('#wkThreetitle').show();
+    $('#wkOnetitle').hide();
+    $('#wkTwotitle').hide();
 }) 
 
 function showVideo () {
