@@ -23,7 +23,7 @@
         </ul>
         <br><br>
         <table class="workouts s12" id="firstDaywk">
-                <thead id="tableHeaders"><span class="wkTitle" id="wkOnetitle">First Day 🎯 (Press the 📺 Button to Watch a Video for the Exercise)</span>
+                <thead id="tableHeaders"><span class="wkTitle" id="wkOnetitle">First Day 🎯 (Press the <img class="responsive-img youtube yttitle" src="./images/youtube-logo.png"> Button to Watch a Video for the Exercise)</span>
                      <tr>
                          <th>Exercise</th>
                          <th>Sets</th>
@@ -36,7 +36,7 @@
      
                  <tbody id="tableBody">
                      <tr>
-                         <td>Bench Press <a><span class="benchPress">📺</span></a></td>
+                         <td class="exercise">Bench Press <img class="responsive-img youtube" id="youtubeLogo" src="./images/youtube-logo.png"></td>
                          <td>4</td>
                          <td>x</td>
                          <td>4 - 6</td>
@@ -68,7 +68,7 @@
                              <td>Triceps</td>
                          </tr>
                      <tr>
-                             <td>Upright Row</td>
+                             <td>Barbell Press</td>
                              <td>3</td>
                              <td>x</td>
                              <td>5 -6</td>
@@ -196,7 +196,7 @@
          
                      <tbody id="tableBody">
                          <tr>
-                             <td>Upright Row</td>
+                             <td>Barbell Press</td>
                              <td>3</td>
                              <td>x</td>
                              <td>5 - 6</td>
@@ -262,8 +262,72 @@
                      </tbody>
          
                  </table>
+
+    <div class="input-field col s12">
+    <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Bench Press</option>
+        <option value="2">Incline Bench Press</option>
+        <option value="3">Barbell Press</option>
+        <option value="4">Dumbbell Press</option>
+        <option value="5">Barbell Curl</option>
+        <option value="6">Dumbbel Curl</option>
+        <option value="7">Dips</option>
+        <option value="8">Triceps Pressdown</option>
+        <option value="9">Pull Ups</option>
+        <option value="10">Deadlifts</option>
+        <option value="11">Barbell Row</option>
+        <option value="12">Pulldown Variations</option>
+        <option value="13">Ab Wheel Roll</option>
+        <option value="14">Squats</option>
+    </select>
     </div>
-    
+
+            <!-- Modal -->
+    <div class="modal fade" id="modal-box" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-message"></div>
+                <div class="modal-footer container-fluid">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-youtube" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                    <div class="modal-header"><h5 class="modal-title" id="youtube-modal-title">Modal title</h5></div>
+                <div class="modal-body">
+                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                    <div>
+                        <div id="youtube-player"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            Weight lifted:
+            <div class="input-field inline">
+            <input id="weight_inline" type="text" class="validate">
+            <label for="Weight_inline">weight in pounds</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./javascript/script.js"></script>

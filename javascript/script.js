@@ -1,3 +1,14 @@
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCXBSurCNcCT0yS23bLg-IHBBJGOnkGE-I",
+    authDomain: "full-body-26f09.firebaseapp.com",
+    databaseURL: "https://full-body-26f09.firebaseio.com",
+    projectId: "full-body-26f09",
+    storageBucket: "",
+    messagingSenderId: "1062816306944"
+  };
+  firebase.initializeApp(config);
+
 $('.dropdown-trigger').dropdown({
     inDuration: 300,
     outDuration: 225,
@@ -11,7 +22,7 @@ $('.dropdown-trigger').dropdown({
 
 $(document).ready(function hideWk() {
     $(".workouts").hide();
-})
+});
 var hideTitles =  function hideTitles() {
     $('#wkOnetitle').hide();
     $('#wkTwotitle').hide();
@@ -26,7 +37,7 @@ var wkOne = $('#dayOne').click( function () {
     $('#wkOnetitle').show();
     $('#wkTwotitle').hide();
     $('#wkThreetitle').hide();
-}) 
+});
 
 var wkTwo = $('#dayTwo').click( function () {
     $('#firstDaywk').hide();
@@ -35,7 +46,7 @@ var wkTwo = $('#dayTwo').click( function () {
     $('#wkTwotitle').show();
     $('#wkOnetitle').hide();
     $('#wkThreetitle').hide();
-}) 
+});
 
 var wkThree = $('#dayThree').click( function () {
     $('#firstDaywk').hide();
@@ -44,18 +55,25 @@ var wkThree = $('#dayThree').click( function () {
     $('#wkThreetitle').show();
     $('#wkOnetitle').hide();
     $('#wkTwotitle').hide();
-}) 
-
-function showVideo () {
-    var video = document.createElement('video');
-    video.src = 'https://youtu.be/XSza8hVTlmM';
-}
-
-$('.benchPress').click(function showVideo () {
-    var video = document.createElement('video');
-    var sourceVideo = document.createElement("source"); 
-    sourceVideo.type = "video/mp4";
-    sourceVideo.src = 'https://youtu.be/XSza8hVTlmM';
-
-    video.appendChild(sourceVideo);
 });
+
+    function searchYT() {
+        var queryURL = "https://www.googleapis.com/youtube/v3/search" + term;
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+            dataType: "JSON"
+        });
+    }
+
+    $("#youtubeLogo").on("click", function (event) {
+        event.preventDefault();
+        term = $('.exercise').text();
+        console.log(term);
+        console.log(searchYT);
+    });
+
+    $(document).ready(function(){
+        $('select').formSelect();
+      });
+            
